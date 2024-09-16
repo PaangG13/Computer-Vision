@@ -1,16 +1,31 @@
 # Computer Vision: Object Detection
 ## Abstract  
-  Train an agent to win against the AI opponent in OpenAI Gym’s Pong (‘PongDeterministic-v4’) game.
+  The task of object detection is to recognize multiple objects based on the input image, locate different objects and provide bounding boxes. The mainstream object detection algorithms are mainly based on deep learning models, which can be divided into two categories: two-state detection algorithm and one-state detection algorithm.
 
 ## Data sets
-  Shanghai Stock Exchange Index (ticker: SSE Composite Index -000001): 10 yeas timeline (from the start of 2013 to the end of 2022). 
-  (80% training, and 20% testing)
+  In data-analysis, I conducted a statistical analysis on the types and number of labels in the train dataset. The training dataset contains a total of 2031 images. The results are shown in the following table. Among them, one image may contain multiple objects that need to be detected.
+  <div align="center">
+
+| Category  | Number |
+| ---------- | -----------|
+| Bird  | 589 |
+| Bus  | 430 |
+| Car  | 1379 |
+| Cat  | 634 |
+| Dog  | 815 |
+
+</div>
+
+<p align="center">
+  Table 1 Result of statistical analysis
+</p>
+
 
 ## Method
-  Deep Q-Leaning Network (DQN)
+  RetinaNet consists of three parts: ResNet, Feature Pyramid Net (FPN), and subnet.
 
 ## Result
-(AI) 21:4 (My agent)
+
 
 
 

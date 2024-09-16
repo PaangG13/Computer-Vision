@@ -36,7 +36,7 @@ pip install tqdm
 pip install scikit-image
 ```
 
-## 3 Working on the assignment
+## 3 Working on the task
 
 ### 3.1 Basic knowledge
 Basic knowledge about object detection is necessary for completing the task. Please refer to the related papers (e.g., [Fast R-CNN](https://arxiv.org/abs/1504.08083), [YOLO](https://arxiv.org/abs/1506.02640)). You should also carefully read the paper of [RetinaNet](https://arxiv.org/abs/1708.02002).

@@ -1,13 +1,3 @@
-# HKU-DASC7606-A1
-HKU DASC 7606 Assignment 1 (Computer Vision: Object Detection), 2023-24 Spring
-
-**For questions and discussion**,
-- We encourage you to use [GitHub Issues](https://github.com/ilnehc96/HKU-DASC7606-A1/issues) of this repository.
-- Or if you prefer online doc: [Discussion doc](https://connecthkuhk-my.sharepoint.com/:w:/g/personal/ilnehc_connect_hku_hk/EbjCi5B1nZ1PhoLOsyCXvXoB1rvQcwQSMyb-uL3v7ORNPQ?e=fkUIeC).
-
-This codebase is only for HKU DASC 7606 (2023-2024 Spring) course. Please don't upload your answers or this codebase to any public platforms (e.g., GitHub) before permitted. All rights reserved.
-
-
 ## 1 Introduction
 
 ### 1.1 Background: Object Detection
@@ -30,26 +20,6 @@ The goals of this assignment are as follows:
 - Develop a deep learning system from scratch, including network design, model training, hyperparameter tuning, training visualization, model inference and performance evaluation.
 
 ## 2 Setup
-
-You can work on the assignment in one of two ways: locally on your own machine, or on a virtual machine on HKU GPU Farm.
-
-### 2.1 Working remotely on HKU GPU Farm (Recommended)
-
-Note: after following these instructions, make sure you go to work on the assignment below (i.e., you can skip the Working locally section).
-
-As part of this course, you can use HKU GPU Farm for your assignments. We recommend you follow the quickstart provided by the [official website](https://www.cs.hku.hk/gpu-farm/quickstart) to get familiar with HKU GPU Farm.
-
-After checking the quickstart document, make sure you have gained the following skills:
-
-+ Knowing how to access the GPU Farm and use GPUs in interactive mode. We recommend using GPU support for this assignment, since your training will go much, much faster.
-+ Getting familiar with running Jupyter Lab without starting a web browser.
-+ Knowing how to use tmux for unstable network connections.
-
-### 2.2 Working locally
-
-If you have the GPU resources on your own PC/laptop and wish to use that, that’s fine – you’ll need to install the drivers for your GPU, install CUDA, install cuDNN, and then install PyTorch. You could theoretically do the entire assignment with no GPUs, though this will make training the model much slower.
-
-### 2.3 Environment Setup
 
 **Installing Python 3.8+**: To use python3, make sure to install version 3.8+ on your local machine.
 
@@ -74,8 +44,6 @@ pip install tqdm
 pip install scikit-image
 ```
 
-> You can seek some help about HKU GPU Farm and basic environment setup from TA Fred (u3580293@connect.hku.hk).
-
 ## 3 Working on the assignment
 
 ### 3.1 Basic knowledge
@@ -93,12 +61,7 @@ In this assignment, you are going to realize object detection with the provided 
 
 The dataset is available [HERE](https://drive.google.com/file/d/1aJHCU-iAWJwqOizzYVhuHr6l_wPJWE_p/view?usp=sharing). The dataset is now composed of train and val parts and their corresponding annotations. Note that test images with fake annotations will be released one week before the assignment deadline. The dataset structure follows [COCO format](https://cocodataset.org/#format-data).
 
-Download codes:
 
-```bash
-git clone https://github.com/ilnehc96/HKU-DASC7606-A1.git
-cd HKU-DASC7606-A1
-```
 
 After downloading and extracting the dataset, you should put all files following the structure below:
 
@@ -147,120 +110,12 @@ python test.py --coco_path ./data --checkpoint_path ./output/model_final.pt --de
 python vis.py
 ```
 
-Please see more arguments input in corresponding scripts.
-
-### 3.5 Assignment tasks
-
-**Task 1: Filling in the Model**
-
-You should fill in two blanks in file [retinanet/model.py](retinanet/model.py).
-
-**Task 2: Filling in the FPN Network**
-
-You should fill in one blank in file [retinanet/FPN.py](retinanet/FPN.py).
-
-**Task 3: Filling in the Object Detection Loss Function**
-
-You should fill in two blanks to complete object detection loss, Focal Loss which is a core component of RetinaNet, in file [retinanet/losses.py](retinanet/losses.py).
-
-**Task 4: Fill in the dataloader**
-
-Please fill in two blanks to complete the dataloader in file [retinanet/dataloader.py](retinanet/dataloader.py).
-
-**Task 5: Implement the training pipeline**
-
-Please fill in three blank to complete the basic training pipline in file [train.py](train.py).
-
-**Task 6: Predict the outputs of the test set**
-
-This task requires you to predict the outputs of the test set. We will release the test set for you to generate prediction results for submission **7 days before the deadline**.
-
 After downloading the test set, you should organize the files as the structure above and then run the evaluation command line to generate final json file. After generating final json file, you can use the script below to test the format of your results (Will be released with the test set). **We will not debug on format issues when do the final evaluation, which means you will lose full marks for the performance part if the format is not correct.**
 
 ```bash
 python test_submission.py --coco_path ./data
 ```
 
-**Task 7: Improve the detection performance**
-
-You are required to improve the baseline model with your own configuration. There are lots of ways to improve the baseline model. Here are some suggestions for you.
-
-+ Hyper-parameter tuning. There are lots of important hyper-parameters, such as the optimizer, learning rate, batch size, warm-up and training iterations, etc.
-
-+ Different neural network architectures for predicting the span. You may choose a more advanced neural network architecture and design your own customized neural network. If you have any tries on this part, you should submit all your codes, model output, and the report to explain your understanding about how to improve the detection performance with more advanced architecture. You should explain why these improvements can enhance the performance in your own words instead of just cloning some codes and performing inference. See details in Sec. 3.5.
-
-+ Loss functions designs. You may add label smoothing or other tricks or come up with a new loss function or training objectives.
-
-**Task 8: Write a report (no more than 4 pages)**
-
-Your report should include three main sections: introduction, method, and experiment. See details below.
-
-
-### 3.6 Files to submit
-
-1.  Prepare a final report in PDF format (**no more than 4 pages**)
-
-    1.1 Introduction. Briefly introduce the task & background & related works.
-
-    1.2 Methods. Describe the basic method you implement for RetinaNet, including ResNet, Focal Loss, etc. Describe what you did to improve the baseline model performance. For example, this may include but is not limited to: (i) Hyper-parameter tuning, e.g. learning rate, batch size, and training epochs. (ii) Different neural network architectures. (iii) Loss functions. 
-    
-    1.3 Experiments & Analysis **(IMPORTANT)** Analysis is the most important part of the report. Possible analysis may include but is not limited to:
-
-      - Dataset analysis (dataset statistics)
-      - Ablation studies on validation set. Analyze why better performance can be achieved when you made some modifications, e.g. hyper-parameters, model architectures, and loss functions. The performance on the validation set should be given to validate your claim.
-      - Qualitative evaluations of your model. Select several specific cases in the dataset and see if your model correctly finds the answer. Failure case analysis is also suggested.
-      - More analysis, such as the loss curve. We would not provide the code to save logs with tools such as [tensorboard](https://pytorch.org/tutorials/recipes/recipes/tensorboard_with_pytorch.html) or [wandb](https://docs.wandb.ai/guides/integrations/pytorch) for drawing the figure. It is easy to implement and you should find recourses online to enrich your report.
-  
-      > Due to the relative ease of the tasks in original code, we highly recommend you realize the qualitative and other analysis to enrich your report and get high report scores.
-
-2. All the completed codes.
-
-3. Models, in the format of model checkpoint link (model_link.txt) due to the limitation on submission file size.
-
-4. **Important!** Generated results on the test set. Please make sure you can successfully run the `test_submission` code before submission.
-
-5. If you use other advanced models, submit
-  
-    5.1 All the codes, model links, and prediction reuslts, separately with our required files above.
-   
-    5.2 (optional) README.md that describes the final model and results for marking your assignment. We will use predictions from this original code for evaluation by default if not clearly specified. 
-
-If your student id is 12345, then the compressed file for submission on Moodle should be organized as follows:
-
-```
-12345.zip (or 12345.tar / 12345.tar.gz)
-├── report.pdf
-├── your source code
-├── model_link.txt
-├── test_bbox_results.json
-|
-├── (optional) README.md
-├── (optioinal) source code for bonus
-├── (optioinal) bonus_model_link.txt
-└── (optioinal bonus) bonus_test_bbox_results.json
-```
-
-
-### 3.7 Timeline
-
-Jan 30, 2024 (Tue): The assignment release.  
-Feb 25, 2024 (Sun): The test set release.  
-Mar 3, 2024 (Sun): Submission deadline (23:59 GMT+8).
-
-Late submission policy:
-
-- 10% for late assignments submitted within 1 day late. 
-- 20% for late assignments submitted within 2 days late.
-- 50% for late assignments submitted within 7 days late.
-- 100% for late assignments submitted after 7 days late.
-
-### 3.8 Need More Support?
-
-For any questions about the assignment which potentially are common to all students, your shall first look for related resources as follows,
-- We encourage you to use [GitHub Issues](https://github.com/ilnehc96/HKU-DASC7606-A2/issues) of this repository.
-- Or if you prefer online doc: [Discussion doc](https://connecthkuhk-my.sharepoint.com/:w:/g/personal/ilnehc_connect_hku_hk/EbjCi5B1nZ1PhoLOsyCXvXoB1rvQcwQSMyb-uL3v7ORNPQ?e=fkUIeC).
-
-For any other private questions, please contact Li Chen (ilnehc@connect.hku.hk) and Haibao Yu (yuhaibao@connect.hku.hk) via email.
 
 ## 4 Marking Scheme:
 
@@ -297,12 +152,6 @@ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = xxx
 Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = xxx
 ```
 
-4. For the final report part (30%): The marks will be given mainly based on the richness of the experiments & analysis.
-
-    (1) Rich experiments + detailed analysis: 90%-100% mark of this part.  
-    (2) Reasonable number of experiments + analysis: 70%-80% mark of this part.  
-    (3) Basic analysis: 50%-60% mark of this part.  
-    (4) Not sufficient analysis: lower than 50%.
 
 ## Reference
 

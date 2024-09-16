@@ -35,7 +35,7 @@
 |A	|0.328	|Default|
 |B	|0.349	|Batch size=4|
 |C	|0.418	|Learning rate=1e-5|
-|D	|0.466	|depth 101 & learning rate=1e-5|
+|**D (Best)**	|**0.466**	|**depth 101 & learning rate=1e-5**|
 
 
 </div>
@@ -48,6 +48,7 @@
 ## 4. Result
 
 
+<div align="center">
+  <img src="./Figure_1.png" height="400">
+</div>
 
-
-![?](https://github.com/PaangG13/Reinforcement-Learning/blob/main/ouput.gif "Result")

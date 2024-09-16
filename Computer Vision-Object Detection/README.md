@@ -1,7 +1,7 @@
 ## 1 Introduction
 
 ### 1.1 Background: Object Detection
-Object detection is one of the most essential tasks in computer vision.  This task aims to recognize and localize objects on 2D images. In this task, we provide five categories of objects, including cat, dog, bus, car, and bird. This assignment focuses on solving the detection problem from a single image.
+Object detection is one of the most essential tasks in computer vision.  This task aims to recognize and localize objects on 2D images. In this task, we provide five categories of objects, including cat, dog, bus, car, and bird. This mission focuses on solving the detection problem from a single image.
 
 <div align="center">
   <img src="./sources/vis.png" height="300">
@@ -10,14 +10,6 @@ Object detection is one of the most essential tasks in computer vision.  This ta
   Figure 1. An example of 2D Object Detection from the given dataset.
 </p>
 
-### 1.2 What will you learn from this assignment?
-This assignment will walk you through a classic 2D object detection task. You will implement a famous 2D object detection method, [RetinaNet](https://arxiv.org/abs/1708.02002), and the famous focal loss proposed with the network, from scratch.
-
-The goals of this assignment are as follows:
-
-- Understand the basic theories of deep learning exspecially for object detection task, such as the networks of ResNet, the detection loss function, etc.
-- Gain experience of implementing neural networks with a popular deep learning framework PyTorch.
-- Develop a deep learning system from scratch, including network design, model training, hyperparameter tuning, training visualization, model inference and performance evaluation.
 
 ## 2 Setup
 
@@ -49,41 +41,34 @@ pip install scikit-image
 ### 3.1 Basic knowledge
 Basic knowledge about object detection is necessary for completing the task. Please refer to the related papers (e.g., [Fast R-CNN](https://arxiv.org/abs/1504.08083), [YOLO](https://arxiv.org/abs/1506.02640)). You should also carefully read the paper of [RetinaNet](https://arxiv.org/abs/1708.02002).
 
-### 3.2 Task description
+### 3.2  Get Data and Code
 
-In this assignment, you are going to realize object detection with the provided images. 
-
-- You must fill in the blanks and submit the completed codes for this assignment with the provided codebase. This assignment offers an incomplete codebase for object detection with modified RetinaNet.
-- You must submit the test data's model outputs with your completed codes. The test set will be released 1 week before the deadline. You should utilize hyperparameter tuning and other widely-used techniques to improve detection performance.
-- You must submit a maximum of 4-page technique report to explain how you improve the object detection performance. Besides, some visualization results (e.g., loss curve) are encouraged in this report.
-
-### 3.3 Get Data and Code
-
-The dataset is available [HERE](https://drive.google.com/file/d/1aJHCU-iAWJwqOizzYVhuHr6l_wPJWE_p/view?usp=sharing). The dataset is now composed of train and val parts and their corresponding annotations. Note that test images with fake annotations will be released one week before the assignment deadline. The dataset structure follows [COCO format](https://cocodataset.org/#format-data).
+The dataset is available [HERE](https://drive.google.com/file/d/1aJHCU-iAWJwqOizzYVhuHr6l_wPJWE_p/view?usp=sharing).  The dataset structure follows [COCO format](https://cocodataset.org/#format-data).
 
 
 
 After downloading and extracting the dataset, you should put all files following the structure below:
 
 ```
-└── HKU-DASC7606-A1
+└── Computer Vision-Object Detection
     ├── data
            ├── image                   # images
                ├── train
                ├── val
-               └── test                # (released before DDL) test images
+               └── test                
            ├── train.json              # train set annotation
            ├── val.json                # validation set annotation
-           └── test.json               # (released before DDL) **test image ids with fake annotations**
+           └── test.json               #  **test image ids with fake annotations**
     ├── retinanet                      # src code of retinanet
     ├── train.py                       # main script to train the model
     ├── test.py                        # main script to test the model
-    ├── test_submission.py             # (released before DDL) final script for evaluation on test set by TA, check the format of submission file
+    ├── test_submission.py             #  final script for evaluation on test set 
     ├── vis.py                         # visualization script
+    ├── plot.py                        
     └── README.md
 ```
 
-### 3.4 Scripts
+### 3.3 Scripts
 
 #### Train
 
@@ -118,8 +103,6 @@ python test_submission.py --coco_path ./data
 
 
 ## 4 Marking Scheme:
-
-Marks will be given based on the performance that you achieve on the test and the submitted report file. TAs will perform an evaluation of the predicted answers.
 
 The marking scheme has three parts, (1) the completeness of the code (30% marks), (2) the performance ranking based on mAP (40% marks), and (3) the final report (30% marks):
 

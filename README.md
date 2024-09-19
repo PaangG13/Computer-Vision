@@ -30,23 +30,38 @@
 
   <div align="center">
 
-|Name|	mAP	|Notes|
-| ---------- | -----------| -----------|
-|A	|0.328	|Default|
-|B	|0.349	|Batch size=4|
-|C	|0.418	|Learning rate=1e-5|
-|**D (Best)**	|**0.466**	|**depth 101 & learning rate=1e-5**|
+|Name|Parameters|
+| ---------- | -----------|
+|A	|Default|
+|B	|Batch size=4|
+|C	|Learning rate=1e-5|
+|D |depth 101 & learning rate=1e-5|
 
 
 </div>
 
 <p align="center">
-  Table 2 Result of statistical analysis
+  Table 2 Parameters of Different Models
 </p>
 
 
 ## 4. Result
+ 
+ <div align="center">
+   
+|Name|	mAP	|
+| ---------- | -----------|
+|A	|0.328	|
+|B	|0.349	|
+|C	|0.418	|
+|**D (Best)**	|**0.466**	|
 
+
+</div>
+
+<p align="center">
+  Table 3 Result on Val Set
+</p>
 
 <div align="center">
   <img src="./Figure_1.png" height="400">

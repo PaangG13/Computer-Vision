@@ -104,20 +104,6 @@ python test_submission.py --coco_path ./data
 
 ## 4 Marking Scheme:
 
-The marking scheme has three parts, (1) the completeness of the code (30% marks), (2) the performance ranking based on mAP (40% marks), and (3) the final report (30% marks):
-
-1. For the coding part (30%), you need to complete all the required codes in order to get the full score. Partial score will be considered rarely and carefully.
-
-2. For the performance part (40%), the mark will be given based on the performance (`mAP, Average Precision, IoU=0.5:0.95, area=all`) of your result on test set. The default training setting (ResNet-50, epoch20, default batch size, optimizer, learning rate, etc), after you finish the required blanks, will get 34.2% mAP on the validation set and 37.7% mAP on the test set.
-
-    (1) mAP larger than 40% will get the full mark of this part.  
-    (2) mAP between 38%-40% will get 90% mark of this part.  
-    (3) mAP between 36%-38% will get 80% mark of this part.  
-    (4) mAP between 32%-36% will get 70% mark of this part.  
-    (5) mAP between 24%-32% will get 60% mark of this part.  
-    (6) mAP between 10%-24% will get 50% mark of this part.  
-    (7) Others will get 0% mark.
-
 After evaluation, you will see a table like below. The number in first line is the result we will use for marking.
 
 ```
